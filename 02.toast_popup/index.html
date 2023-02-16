@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      padding: 15px 20px;
+      transform: translate(-50%, 10px);
+      border-radius: 30px;
+      overflow: hidden;
+      font-size: .8rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .5s, visibility .5s, transform .5s;
+      background: rgba(0, 0, 0, .35);
+      color: #fff;
+      z-index: 10000;
+    }
+
+    #toast.reveal {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, 0)
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    Toast popup이란?
+    => 토스트 기계에서 토스트를 구운 것 처럼 툭 튀어 올라왔다 내려가는 팝업이다.
+    사용자의 행동에 대한 메시지를 전달하고 싶은데 굳이 확인/취소 이런 버튼이 필요없고 간단한 정보만 전달할 때 사용한다. 
+    토스트 팝업은 텍스트로 이루어져 있고, 언제 나타날지(트리거), 얼마나 지속될지(시간)을 정하면 된다.
+    ex) 직접 클릭해서 닫아야하는 alert창 대신, 나타났다 몇초 후 사라지는 경고or알림창. 
+  -->
+  <div id="toast"></div>
+
+  <script>
+    let removeToast;
+
+function toast(string) {
+  const toast = document.getElementById("toast");
+
+  toast.classList.contains("reveal") ?
+    (clearTimeout(removeToast), removeToast = setTimeout(function () {
+        document.getElementById("toast").classList.remove("reveal")
+    }, 1000)) :
+    removeToast = setTimeout(function () {
+        document.getElementById("toast").classList.remove("reveal")
+    }, 1000)
+  toast.classList.add("reveal"),
+    toast.innerText = string
+}
+  </script>
+</body>
+</html>
