@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 웹페이지에서 레이어 팝업을 띄울 때 배경으로부터 팝업화면을 강조하기 위해 딤(dim), 딤드(dimmed)라고 불리는 반투명 음영 영역을 넣는다. 대부분 아래와 같은 형태로 작성된다. -->
+
+  <!-- 1.background 설정법 -->
+  <!-- 기존에 주로 사용되던 방식이다. 전체에 반투명 객체를 올리고 그 위에 강조하고 싶은 레이어 객체를 올리는 방식이다. -->
+  <div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 100; opacity: 0.5; background-color: rgb(0, 0, 0); "></div>
+
+  <!-- 2.border 설정법 -->
+  <!-- border width를 조절하여 딤드 효과를 주는 방식으로, width 영역에 대해서만 반투명 처리가 된다. 
+  width에 해당하지 않는 부분은 비어서 배경의 컨텐츠가 그대로 보이게 된다. 
+  즉, 강조하고 싶은 새로운 컨텐츠를 딤드 위로 보이는 경우가 아니라 기존 컨텐츠 전체에서 일부 영역을 강조해서 보여주고 싶을 때 유용하다. -->
+  <div style="position:fixed; top:0px; left:0px; width:100%; height:100%; z-index: 100; opacity:0.5; border-color:black; border-style:solid; border-width:0 0 2000px 0"></div>
+
+  
+  <!-- 기존 컨텐츠는 무시하고 새로운 컨텐츠를 강조하고 싶을 때 => background-color로 딤드 -->
+  <!-- 기존 컨텐츠의 특정 영역을 강조하고 싶을 때 => border로 딤드 -->
+
+  <!-- 참고 블로그: https://sub0709.tistory.com/35 -->
+</body>
+</html>
