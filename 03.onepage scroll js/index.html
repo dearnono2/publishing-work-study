@@ -8,14 +8,15 @@
 <body>
   <body>
     <!-- fullpage.js는 실무에서 쓸 때 저작권이 문제되는 부분들이 있어서 onepage scroll.js로 대체해서 사용할 수도 있다.  -->
-    <!-- 1. div class="main"으로 section들을 감싸준다. 하단의 스크립트 코드를 조작해서 감싸는 역할을 하는 부모 요소의 명이나 섹션 역할을 하는 요소 등을 내가 원하는걸로 바꿀 수 있다. -->
+
+    <!-- 1.div class="main"으로 section들을 감싸준다. 하단의 스크립트 코드를 조작해서 감싸는 역할을 하는 부모 요소의 명이나 섹션 역할을 하는 요소 등을 내가 원하는걸로 바꿀 수 있다. -->
     <div class="main">
       <section>...</section>
       <section>...</section>
     </div>
     
     <script>
-      // 2. 아래의 코드를 스크립트 구간에 넣어준다.
+      // 2.아래의 코드를 스크립트 구간에 넣어준다.
       // .main 안에 들어있는 
       $(".main").onepage_scroll({
         sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
